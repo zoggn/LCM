@@ -118,22 +118,22 @@ static void lcm_get_params(LCM_PARAMS *params)
 {
 	memset(params, 0, sizeof(LCM_PARAMS));
 
-	params->dpi.dsc_params.slice_bpg_offset = 4;
-	params->dpi.dsc_params.initial_offset = 8;
-	params->dpi.io_driving_current = 48;
-	params->dsi.horizontal_active_pixel = 215;
-	params->width = 720;
-	params->type = 2;
-	params->dpi.dsc_params.xmit_delay = 2;
-	params->dpi.dsc_params.increment_interval = 2;
-	params->dpi.ctrl_io_driving_current = 720;
-	params->height = 1280;
-	params->dpi.dsc_params.flatness_maxqp = 1280;
-	params->dpi.dsc_params.bit_per_pixel = 3;
-	params->dpi.dsc_params.bit_per_channel = 3;
-	params->dpi.dsc_params.final_offset = 16;
-	params->dpi.dsc_params.rc_mode1_size = 16;
-	params->dpi.msb_io_driving_current = 16;
+  	params->dsi.vertical_backporch = 16;
+  	params->dsi.vertical_frontporch = 20;
+  	params->dsi.horizontal_sync_active = 8;
+  	params->dsi.PLL_CLOCK = 320;
+  	params->type = 2;
+  	params->dsi.data_format.format = 2;
+  	params->dsi.PS = 2;
+  	params->dsi.vertical_sync_active = 2;
+  	params->width = FRAME_WIDTH;
+  	params->dsi.horizontal_active_pixel = FRAME_WIDTH;
+  	params->height = FRAME_HEIGHT;
+  	params->dsi.vertical_active_line = FRAME_HEIGHT;
+  	params->dsi.mode = 3;
+  	params->dsi.LANE_NUM = 3;
+  	params->dsi.horizontal_backporch = 120;
+  	params->dsi.horizontal_frontporch = 120;
 
 }
 
